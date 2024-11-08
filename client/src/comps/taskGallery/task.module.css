@@ -1,0 +1,181 @@
+/* ----------Task gallery styling----------- */
+.gallary_wrapper {
+  padding: 40px 20px 20px;
+  margin: 60px 10px 10px;
+  background: white;
+  border-radius: 5px;
+}
+.task_gallery {
+  display: flex;
+  gap: 8px;
+  overflow: hidden;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 1.2rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgb(241, 241, 241);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #2c55ac;
+    border: 2px solid rgb(241, 241, 241);
+    background-clip: content-box;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #1d385e;
+    cursor: grabbing;
+  }
+}
+
+/* ----------Task category styling----------- */
+.task_category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f1f1f1;
+  padding: 5px;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+
+  .category_name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    .colorbox {
+      display: block;
+      width: 17px;
+      height: 17px;
+      border-radius: 10px 0 0 10px;
+    }
+  }
+  .count {
+    padding: 2px 8px;
+    border-radius: 5px;
+    background-color: rgb(226, 226, 226);
+  }
+}
+.task_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: clamp(250px, 100vh, 500px);
+  overflow: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgb(241, 241, 241);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #2c55ac;
+    background-clip: content-box;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #1d385e;
+    cursor: grabbing;
+  }
+}
+
+/* ----------Task styling----------- */
+.task_wrapper {
+  width: 300px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.client_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .client_info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    & img {
+      width: 25px;
+      height: 25px;
+    }
+    & p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  opacity: 0.7;
+
+  .left_box {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+
+    & p {
+      max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .right_box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+    padding: 3px 6px;
+    background: rgb(238, 237, 237);
+    border-radius: 5px;
+
+    & p {
+      font-weight: 500;
+    }
+  }
+}
+
+.insights {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(97, 97, 97);
+
+  .avater {
+    width: 25px;
+    height: 25px;
+    background: rgb(238, 237, 237);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .comments,
+  .attatchment,
+  .date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}

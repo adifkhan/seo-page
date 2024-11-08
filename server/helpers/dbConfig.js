@@ -1,0 +1,21 @@
+import mongoose from "mongoose";
+
+export async function connectDb() {
+  try {
+    mongoose.connect(
+      `mongodb+srv://adifkhan:TCZkkQs2kJIJJGYS@cluster0.ruu6n.mongodb.net/shiritori`
+    );
+    const connection = mongoose.connection;
+
+    connection.on("connected", () => {
+      console.log("MongoDB connected!");
+    });
+
+    connection.on("error", (err) => {
+      console.log("MongoDB connection error", err);
+      // process.exit();
+    });
+  } catch (error) {
+    console.log("something went wrong while connecting to DB", error);
+  }
+}
