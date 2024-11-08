@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import { axios } from "../../utils/axios";
 
 const Modal = ({ task, setOpen, refetch, setRefetch }) => {
-  const [taskData, setTaskData] = React.useState({ ...task });
+  const [taskData, setTaskData] = React.useState({});
   const [files, setFiles] = React.useState([]);
 
   React.useEffect(() => {
@@ -23,22 +23,11 @@ const Modal = ({ task, setOpen, refetch, setRefetch }) => {
 
     try {
       const res = await axios.post(`upload?trackId=${task?._id}`, formData);
-      setTaskData({ ...taskData, files: [...taskData?.files, ...res?.data] });
+      setTaskData({ ...taskData, files: res?.data });
       setRefetch(!refetch);
     } catch (error) {
       console.error("Error uploading files:", error);
     }
-
-    // fetch("http://localhost:5000/upload?trackId=" + task?._id, {
-    //   method: "POST",
-    //   body: formData,
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setTaskData({ ...taskData, files: [...taskData?.files, ...data] });
-    //     setRefetch(!refetch);
-    //   })
-    //   .catch((error) => console.error("Error uploading files:", error));
   };
 
   return (
