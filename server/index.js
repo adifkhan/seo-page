@@ -1,10 +1,13 @@
 import express from "express";
+import dotenv from "dotenv";
 import multer from "multer";
 import cors from "cors";
 import Attachment from "./models/fileModel.js";
 import { connectDb } from "./helpers/dbConfig.js";
 import path from "path";
 import Task from "./models/taskModel.js";
+
+dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 
